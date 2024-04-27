@@ -97,7 +97,7 @@ urlpatterns = [
 Organize project-level `HTML` files in the `/templates/` directory.
 
 ```py
-MPLATES = [
+TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [Path(BASE_DIR, 'templates'),],    # define project level template
@@ -150,7 +150,7 @@ py ./DjangoBlog/manage.py collectstatic
 
 ### Database Migration
 
-At this stage, I utilize `SQLite3` as the database. Execute the following commands:
+At this stage, utilize `SQLite3` as the database. Execute the following commands:
 
 ```sh
 py ./DjangoBlog/manage.py makemigrations    # creating new migrations based on the changes
