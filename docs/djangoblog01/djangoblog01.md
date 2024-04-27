@@ -199,7 +199,7 @@ git add -A
 git commit -m "Start the Django project and create home page"
 
 # Create an annotated tag for version 1.0 with a message
-git tag -a blog0.1.0.0 -m "Version 0.1.0.0 - Initial project and Home page."
+git tag -a blog0.1.0.0 -m "Version 0.1.0.0 - Initial project, Home page feature."
 
 # Push the commit and the tag to the remote repository
 git push
