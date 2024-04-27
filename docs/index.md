@@ -43,7 +43,7 @@
 
 | Title                                                                                               | Git Tag      | Blog Url |
 | --------------------------------------------------------------------------------------------------- | ------------ | -------- |
-| [DjangoBlog Project-01: Start the project and create the home page](./djangoblog01/djangoblog01.md) | blog0.1.0.0 |          |
-| [DjangoBlog Project-02: Account feature](#)                                                         | blog-0.1.1.0 |          |
+| [DjangoBlog Project-01: Start the project and create the home page](./djangoblog01/djangoblog01.md) | blog0.1.0.0  |          |
+| [DjangoBlog Project-02: Account feature](./djangoblog02/djangoblog02.md)                            | blog0.1.1.0 |          |
 | [DjangoBlog Project-03: Blog feature](#)                                                            | blog-0.1.1.1 |          |
 | [DjangoBlog Project-04: Hashtag feature](#)                                                         | blog-0.1.1.2 |          |
