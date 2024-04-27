@@ -192,9 +192,17 @@ pip freeze > requirements.txt
 - Commit and push to repository
 
 ```sh
-git add -A  # adds all changes to the stagging area
-git commit -m "feature/start project, home page"  # Record changes to the local repository
-git push  # Update remote repo
+# Add all changes to the staging area
+git add -A
+
+# Commit the changes to the local repository with a descriptive message
+git commit -m "Start the Django project and create home page"
+
+# Create an annotated tag for version 1.0 with a message
+git tag -a blog0.1.0.0 -m "Version 0.1.0.0 - Initial project and Home page."
+
+# Push the commit and the tag to the remote repository
+git push
 ```
 
 ---
