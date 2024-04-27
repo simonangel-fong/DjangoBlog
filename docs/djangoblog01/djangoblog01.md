@@ -1,6 +1,6 @@
 # DjangoBlog Project-01: Start the project and create the home page
 
-[Back](../index.md)
+[Back](../../README.md)
 
 - [DjangoBlog Project-01: Start the project and create the home page](#djangoblog-project-01-start-the-project-and-create-the-home-page)
   - [Start the Django Project](#start-the-django-project)

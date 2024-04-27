@@ -31,7 +31,6 @@
       ></button>
     </div>
     <div class="carousel-inner">
-      
       <!-- blog -->
       <div class="carousel-item active">
         <img
@@ -46,11 +45,16 @@
           <div class="carousel-caption text-start text-dark col-6">
             <h1 class="fw-bolder">DjangoBlog Project</h1>
             <p class="">
-              A portfolio project powered by Django and Bootstrap, hosted on
-              AWS, and CICD with GitHub.
+              A project powered by Django and Bootstrap, hosted on AWS, and CICD
+              with GitHub.
             </p>
             <p>
-              <a class="btn btn-outline-dark" href="#">More</a>
+              <a
+                class="btn btn-outline-dark"
+                href="{% url 'AppBlog:blog_list' %}"
+              >
+                More
+              </a>
             </p>
           </div>
         </div>

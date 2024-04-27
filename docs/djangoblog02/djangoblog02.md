@@ -1,6 +1,6 @@
 # DjangoBlog Project-02: Account feature
 
-[Back](../index.md)
+[Back](../../README.md)
 
 - [DjangoBlog Project-02: Account feature](#djangoblog-project-02-account-feature)
   - [Install Dependency](#install-dependency)

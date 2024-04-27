@@ -7,4 +7,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name="home"),
     path('admin/', admin.site.urls),
     path("accounts/", include("AppAccount.urls")),
+    path('blog/', include('AppBlog.urls')),
 ]
