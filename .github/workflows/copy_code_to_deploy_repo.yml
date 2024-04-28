@@ -80,7 +80,7 @@ jobs:
       - name: Push changes
         run: |
           git remote set-url origin $REMOTE_URL
-          git push https://${{env.REPO_TOKEN}}@github.com/${{secrets.GIT_USER_NAME}}/${{secrets.REPO_TOKEN}}.git
+          git push https://${{secrets.REPO_TOKEN}}@github.com/${{secrets.GIT_USER_NAME}}/${{env.REMOTE_REPO}}.git
         working-directory: /home/runner/work/${{env.SOURCE_REPO}}/${{env.TEMP_DIR}}/
 
       # Task: Remove temp dir
