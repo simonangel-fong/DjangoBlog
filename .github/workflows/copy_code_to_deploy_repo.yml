@@ -55,6 +55,12 @@ jobs:
           git clone $REMOTE_URL $TEMP_DIR
         working-directory: /home/runner/work/${{env.SOURCE_REPO}}/
 
+      # Task: Remove the existing directory in the target repository
+      - name: Remove the existing directory in the target repository
+        run: |
+          rm -rf ./$TEMP_DIR/$TARGET_DIR
+        working-directory: /home/runner/work/${{env.SOURCE_REPO}}/
+
       # Task: Copy the directory to the target repository
       - name: Copy the directory to the target repository
         run: |
