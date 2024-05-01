@@ -34,15 +34,16 @@
 
 - Repo for the Django code: [DjangoBlog](https://github.com/simonangel-fong/DjangoBlog.git)
 
-| Version        | Feature   | Description                                                     |
-| -------------- | --------- | --------------------------------------------------------------- |
-| `blog-0.1.0.0` | Home Page | Start the Django project, create Home page.                     |
-| `blog-0.1.1.0` | Account   | Enable users to log in, show profile, and log out.              |
-| `blog-0.1.1.1` | Blog      | Enable users to create, list, display, update, and delete blog. |
+| Version       | Feature               | Description                                                     |
+| ------------- | --------------------- | --------------------------------------------------------------- |
+| `blog0.1.0.0` | Home Page             | Start the Django project, create Home page.                     |
+| `blog0.1.1.0` | Account               | Enable users to log in, show profile, and log out.              |
+| `blog0.1.1.1` | Blog                  | Enable users to create, list, display, update, and delete blog. |
+| `blog1.0.0.0` | Environment variables | Enable Environment variables.                                   |
 
 ---
 
-- Repo to deploy project on EC2: [DjangoBlog-Deploy-EC2]
+- Repo to deploy project on EC2: [DjangoBlog-Deploy-EC2](https://github.com/simonangel-fong/DjangoBlog-Deploy-EC2.git)
 - Repo for dockerizing the project: [DjangoBlog-Docker ]
 
 ---
