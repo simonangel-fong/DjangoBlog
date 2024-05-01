@@ -24,9 +24,10 @@
 
 | Title                                                                                                    | Git Tag     | Medium Blog                                                                                                             |
 | -------------------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| [DjangoBlog Project-01: Start the project and create the home page](./docs/djangoblog01/djangoblog01.md) | blog0.1.0.0 | [Url](https://medium.com/@simonangelfong/djangoblog-project-01-start-the-project-and-create-the-home-page-295c2d50f9d7) |
-| [DjangoBlog Project-02: Account feature](./docs/djangoblog02/djangoblog02.md)                            | blog0.1.1.0 | [Url](https://medium.com/@simonangelfong/djangoblog-project-02-account-feature-e18454c8c8d6)                            |
-| [DjangoBlog Project-03: Blog feature](./docs/djangoblog03/djangoblog03.md)                               | blog0.1.1.1 | [Url](https://medium.com/@simonangelfong/djangoblog-project-03-blog-feature-fc5ab7a200b2)                               |
+| [DjangoBlog Project 01: Start the project and create the home page](./docs/djangoblog01/djangoblog01.md) | blog0.1.0.0 | [Url](https://medium.com/@simonangelfong/djangoblog-project-01-start-the-project-and-create-the-home-page-295c2d50f9d7) |
+| [DjangoBlog Project 02: Account feature](./docs/djangoblog02/djangoblog02.md)                            | blog0.1.1.0 | [Url](https://medium.com/@simonangelfong/djangoblog-project-02-account-feature-e18454c8c8d6)                            |
+| [DjangoBlog Project 03: Blog feature](./docs/djangoblog03/djangoblog03.md)                               | blog0.1.1.1 | [Url](https://medium.com/@simonangelfong/djangoblog-project-03-blog-feature-fc5ab7a200b2)                               |
+| [DjangoBlog Project 07: Enable environment variables](./docs/djangoblog04/djangoblog04.md)               | blog1.0.0.0 | [Url]                                                                                                                   |
 
 ---
 
