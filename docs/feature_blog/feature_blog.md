@@ -1,8 +1,8 @@
-# DjangoBlog Project-03: Blog feature
+# DjangoBlog: Blog feature
 
 [Back](../../README.md)
 
-- [DjangoBlog Project-03: Blog feature](#djangoblog-project-03-blog-feature)
+- [DjangoBlog: Blog feature](#djangoblog-blog-feature)
   - [Introduction](#introduction)
   - [Blog Feature](#blog-feature)
     - [Start the Blog App](#start-the-blog-app)
@@ -485,7 +485,7 @@ git add -A
 git commit -m "Feature/Blog"
 
 # Create an annotated tag for version 1.0 with a message
-git tag -a blog0.1.1.1 -m "Version 0.1.1.1 - Add Blog and Hashtag feature"
+git tag -a blog-0.1.2.1 -m "Version 0.1.2.1 - Add Blog and Hashtag feature"
 
 # Push the commit and the tag to the remote repository
 git push
@@ -493,4 +493,4 @@ git push
 
 ---
 
-[TOP](#djangoblog-project-03-blog-feature)
+[TOP](#djangoblog-blog-feature)

@@ -1,8 +1,8 @@
-# DjangoBlog Project 04: Enable Environment variables
+# DjangoBlog: Enable Environment variables
 
 [Back](../../README.md)
 
-- [DjangoBlog Project 04: Enable Environment variables](#djangoblog-project-04-enable-environment-variables)
+- [DjangoBlog: Enable Environment variables](#djangoblog-enable-environment-variables)
   - [Introduction](#introduction)
   - [Install Dependency](#install-dependency)
   - [Update settings.py](#update-settingspy)
@@ -158,4 +158,4 @@ Deployment requires updating project code by cloning the GitHub repository and c
 
 ---
 
-[TOP](#djangoblog-project-04-enable-environment-variables)
+[TOP](#djangoblog-enable-environment-variables)

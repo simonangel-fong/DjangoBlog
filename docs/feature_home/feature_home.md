@@ -1,8 +1,8 @@
-# DjangoBlog Project-01: Start the project and create the home page
+# DjangoBlog: Start the project and create the home page
 
 [Back](../../README.md)
 
-- [DjangoBlog Project-01: Start the project and create the home page](#djangoblog-project-01-start-the-project-and-create-the-home-page)
+- [DjangoBlog: Start the project and create the home page](#djangoblog-start-the-project-and-create-the-home-page)
   - [Start the Django Project](#start-the-django-project)
   - [Create Home Page](#create-home-page)
     - [Define the View:](#define-the-view)
@@ -199,7 +199,7 @@ git add -A
 git commit -m "Start the Django project and create home page"
 
 # Create an annotated tag for version 1.0 with a message
-git tag -a blog0.1.0.0 -m "Version 0.1.0.0 - Initial project, Home page feature."
+git tag -a blog-0.1.0.0 -m "Version 0.1.0.0 - Initial project, Home page feature."
 
 # Push the commit and the tag to the remote repository
 git push
@@ -207,4 +207,4 @@ git push
 
 ---
 
-[TOP](#djangoblog-project-01-start-the-project-and-create-the-home-page)
+[TOP](#djangoblog-start-the-project-and-create-the-home-page)

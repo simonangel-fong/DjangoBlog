@@ -1,8 +1,8 @@
-# DjangoBlog Project-02: Account feature
+# DjangoBlog: Account feature
 
 [Back](../../README.md)
 
-- [DjangoBlog Project-02: Account feature](#djangoblog-project-02-account-feature)
+- [DjangoBlog: Account feature](#djangoblog-account-feature)
   - [Install Dependency](#install-dependency)
   - [Account Feature](#account-feature)
     - [Start the Account App](#start-the-account-app)
@@ -259,7 +259,7 @@ git add -A
 git commit -m "Feature/Account"
 
 # Create an annotated tag for version 1.0 with a message
-git tag -a blog0.1.1.0 -m "Version 0.1.1.0 - Add Account feature"
+git tag -a blog-0.1.1.1 -m "Version 0.1.1.1 - Add Account feature"
 
 # Push the commit and the tag to the remote repository
 git push
@@ -267,4 +267,4 @@ git push
 
 ---
 
-[TOP](#djangoblog-project-02-account-feature)
+[TOP](#djangoblog-account-feature)
