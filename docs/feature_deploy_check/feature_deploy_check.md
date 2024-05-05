@@ -4,22 +4,26 @@
 
 - [DjangoBlog: Deploy Checklist](#djangoblog-deploy-checklist)
   - [Introduction](#introduction)
-  - [Deployment checklist](#deployment-checklist)
-  - [Environment-specific settings](#environment-specific-settings)
+  - [Deployment Checklist](#deployment-checklist)
+  - [Environment-Specific Settings](#environment-specific-settings)
+  - [Applying Configuration for Production Environments](#applying-configuration-for-production-environments)
+  - [Summary](#summary)
 
 ---
 
 ## Introduction
 
+Properly deploying a Django project requires attention to security settings. This document provides a deployment checklist and outlines key environment-specific settings. Using `manage.py check --deploy` helps identify potential security issues.
+
 ---
 
-## Deployment checklist
+## Deployment Checklist
 
-The internet is a hostile environment. Before deploying the Django project, it is required to review the settings, with security, performance, and operations. Django includes many security features.
+Before deploying a Django project, it is crucial to review the settings for security, performance, and operational considerations. Django offers many built-in security features to enhance application safety.
 
-- Ref: https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+Refer to the official document for detailed guidance: https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-- Run `manage.py check --deploy` to check configuration before deploying.
+- check the configuration before deploying
 
 ```sh
 python ./DjangoBlog/manage.py check --deploy
@@ -27,17 +31,19 @@ python ./DjangoBlog/manage.py check --deploy
 
 ![check](./pic/check01.png)
 
-In this case, it reveals serveral regarding security:
+This command identifies potential security issues:
 
-| Issues                | Description                                                    | Solution                             |
-| --------------------- | -------------------------------------------------------------- | ------------------------------------ |
-| SECRET_KEY            | provides cryptographic signing                                 | loading from an environment variable |
-| SECURE_SSL_REDIRECT   | redirects all non-HTTPS requests to HTTPS                      | set True in settings.py              |
-| SESSION_COOKIE_SECURE | use a secure cookie for the session cookie                     | set True in settings.py              |
-| CSRF_COOKIE_SECURE    | use a secure cookie for the CSRF cookie.                       | set True in settings.py              |
-| SECURE_HSTS_SECONDS   | use the HTTP Strict Transport Security header on all responses | set non-zero value in settings.py    |
+| Issues                | Description                                                    | Solution                            |
+| --------------------- | -------------------------------------------------------------- | ----------------------------------- |
+| SECRET_KEY            | Provides cryptographic signing                                 | Load from an environment variable   |
+| SECURE_SSL_REDIRECT   | Redirects all non-HTTPS requests to HTTPS                      | Set True in settings.py             |
+| SESSION_COOKIE_SECURE | Uses a secure cookie for the session cookie                    | Set True in settings.py             |
+| CSRF_COOKIE_SECURE    | Uses a secure cookie for the CSRF cookie                       | Set True in settings.py             |
+| SECURE_HSTS_SECONDS   | Applies HTTP Strict Transport Security header on all responses | Set a non-zero value in settings.py |
 
-- Update settings.py
+- Update `settings.py`
+
+To address the security issues identified in the deployment checklist, update the settings.py file as follows:
 
 ```py
 # HTTPS settings
@@ -65,30 +71,81 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 ```
 
-- Recheck after adding configuration in the settings.py
+After making these updates to the settings.py file, recheck the configuration.
 
 ![check](./pic/check02.png)
 
-It still reveals SECRET_KEY and DEBUG issues which are handled by the environment variables.
+The recheck may still show issues related to `SECRET_KEY` and `DEBUG`, which should be handled via environment variables.
 
 ---
 
-## Environment-specific settings
+## Environment-Specific Settings
 
-Apart from using the `manage.py check --deploy` to checklist issues before deploying, additional settings are required to be concerned.
+In addition to using `manage.py check --deploy` to identify potential issues before deploying, there are additional settings that need to be considered for a secure and efficient deployment.
 
 - `ALLOWED_HOSTS`
 
-When `DEBUG = False`, Django doesn’t work at all without a suitable value for `ALLOWED_HOSTS` This setting is required to protect your site against some `CSRF` attacks
+When `DEBUG` is set to `False`, `ALLOWED_HOSTS` must be properly `configured`. Without a suitable value for this setting, Django will not work correctly, and the application could be vulnerable to CSRF attacks.
 
-In this project, it is handled by the environment variables.
+In this project, the `ALLOWED_HOSTS` setting is handled via environment variables.
 
 - `DEBUG`
 
-It must never enable debug in production. `DEBUG = True` enables handy features like full tracebacks in your browser. For a production environment, though, this is a really bad idea, because it **leaks lots of information** about the project: excerpts of your source code, local variables, settings, libraries used, etc
+Never enable `DEBUG = True` in production environments. While it provides useful debugging features such as full tracebacks, enabling `DEBUG` in production can lead to significant security risks, including exposing sensitive information about the project.
 
-In this project, it is handled by the environment variables.
+In this project, the `DEBUG` setting is managed through environment variables.
 
-- Static files
+- Static Files
 
-Define `STATIC_ROOT` in the settings.py file and use `manage.py collectstatic -c --noinput` command to collects the static files into `STATIC_ROOT`.
+Define `STATIC_ROOT` in the `settings.py` file to specify the directory where static files should be collected. Then, use the following command to collect static files into `STATIC_ROOT`:
+
+```sh
+python manage.py collectstatic -c --noinput
+```
+
+---
+
+## Applying Configuration for Production Environments
+
+After running the deployment checklist, the application should be configured according to production requirements. Applying the checklist settings may cause issues during development due to the enforcement of `HTTPS`. Therefore, it is recommended to apply these configurations only in production.
+
+A practical approach is to use `GitHub` Actions to automatically apply the required settings after each code push. This ensures that the application is properly prepared for production deployment without interfering with the development process.
+
+- Add a step in the GitHub Action yaml file.
+
+```yml
+ - name: Add HTTPS and HSTS settings to settings.py
+        run: |
+          # Define the path to the settings.py file
+          SETTINGS_FILE=./DjangoBlog/settings.py
+
+          # Append HTTPS and HSTS settings to settings.py
+          echo "
+# HTTPS settings
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# HSTS (HTTP Strict Transport Security) settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+" >> $SETTINGS_FILE
+```
+
+---
+
+## Summary
+
+Properly deploying a Django project requires attention to security, performance, and operational settings. Use `manage.py check --deploy` to identify security issues and update `settings.py`:
+
+- `HTTPS`: Enable `SECURE_SSL_REDIRECT`, `SESSION_COOKIE_SECURE`, and `CSRF_COOKIE_SECURE`.
+- `HSTS`: Set `SECURE_HSTS_SECONDS`, `SECURE_HSTS_PRELOAD`, and `SECURE_HSTS_INCLUDE_SUBDOMAINS`.
+- Manage `SECRET_KEY` and `DEBUG` using environment variables and configure `ALLOWED_HOSTS` to prevent `CSRF` attacks.
+- For static files, define `STATIC_ROOT` and use `collectstatic`.
+
+Use `GitHub Actions` to apply `HTTPS` and `HSTS` settings after each code push for secure and streamlined production deployment.
+
+---
+
+[TOP](#djangoblog-deploy-checklist)
