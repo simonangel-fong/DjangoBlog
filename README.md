@@ -37,12 +37,13 @@
 
 - Feature & Tag
 
-| Tag            | Feature                      |
-| -------------- | ---------------------------- |
-| `blog-0.1.0.0` | Starting project & Home page |
-| `blog-0.1.1.1` | Account                      |
-| `blog-0.1.2.1` | Blog                         |
-| `blog-0.2.0.0` | Environment Variable         |
+| Tag            | Feature                       |
+| -------------- | ----------------------------- |
+| `blog-0.1.0.0` | Starting project & Home page  |
+| `blog-0.1.1.1` | Account                       |
+| `blog-0.1.2.1` | Blog                          |
+| `blog-0.2.0.0` | Environment Variable          |
+| `blog-0.3.0.0` | Connect deployment repository |
 
 ---
 
@@ -54,6 +55,7 @@
 | blog-0.1.1.1 | [Account feature](./docs/feature_account/feature_account.md)                      |
 | blog-0.1.2.1 | [Blog feature](./docs/feature_blog/feature_blog.md)                               |
 | blog-0.2.0.0 | [Enable environment variables](./docs/feature_env_var/feature_env_var.md)         |
+| blog-0.3.0.0 | [Connect with Deploy Repo](./docs/github_action/github_action.md)                 |
 | blog-1.0.0.0 | [Deploy checklist](./docs/feature_deploy_check/feature_deploy_check.md)           |
 
 ---
